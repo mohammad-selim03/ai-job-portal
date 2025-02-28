@@ -1,7 +1,7 @@
+import ConnectDB from "@/app/lib/mongoose";
+import Users from "@/models/Users";
 import NextAuth from "next-auth";
 import Auth0Provider from "next-auth/providers/auth0";
-import { connectDB } from "@/lib/mongodb";
-import User from "@/models/User";
 
 export const authOptions = {
   providers: [
@@ -12,23 +12,23 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async signIn({ user }) {
-      await connectDB();
-      const existingUser = await User.findOne({ email: user.email });
+    // async signIn({ user }) {
+    //   await ConnectDB();
+    //   const existingUser = await Users.findOne({ email: user.email });
 
-      if (!existingUser) {
-        await User.create({
-          name: user.name,
-          email: user.email,
-          image: user.image,
-          role: "jobseeker", // Default role
-        });
-      }
-      return true;
-    },
+    //   if (!existingUser) {
+    //     await Users.create({
+    //       name: user.name,
+    //       email: user.email,
+    //       image: user.image,
+    //       role: "jobseeker", // Default role
+    //     });
+    //   }
+    //   return true;
+    // }, 
     async session({ session }) {
-      await connectDB();
-      const dbUser = await User.findOne({ email: session.user?.email });
+      await ConnectDB();
+      const dbUser = await Users.findOne({ email: session.user?.email });
 
       if (dbUser) {
         session.user.role = dbUser.role;
