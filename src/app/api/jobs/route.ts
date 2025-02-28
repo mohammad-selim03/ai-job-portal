@@ -7,9 +7,9 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 export async function POST(req: NextRequest) {
   try {
     const session = await getServerSession(authOptions);
-    // if (!session || session.user.role !== "employer") {
-    //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    // }
+    if (!session || session.user.role !== "employer") {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
 
     await ConnectDB();
     const data = await req.json();

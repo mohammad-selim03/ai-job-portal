@@ -12,20 +12,20 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    // async signIn({ user }) {
-    //   await ConnectDB();
-    //   const existingUser = await Users.findOne({ email: user.email });
+    async signIn({ user }) {
+      await ConnectDB();
+      const existingUser = await Users.findOne({ email: user.email });
 
-    //   if (!existingUser) {
-    //     await Users.create({
-    //       name: user.name,
-    //       email: user.email,
-    //       image: user.image,
-    //       role: "jobseeker", // Default role
-    //     });
-    //   }
-    //   return true;
-    // }, 
+      if (!existingUser) {
+        await Users.create({
+          name: user.name,
+          email: user.email,
+          image: user.image,
+          role: "jobseeker", // Default role
+        });
+      }
+      return true;
+    }, 
     async session({ session }) {
       await ConnectDB();
       const dbUser = await Users.findOne({ email: session.user?.email });

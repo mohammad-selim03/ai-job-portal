@@ -20,7 +20,7 @@ const Login = () => {
       ) : (
         <button
           onClick={() =>
-            signIn("auth0", { callbackUrl: "http://localhost:3001" })
+            signIn("auth0", { callbackUrl: "http://localhost:3000/" })
           } // ✅ Add callbackUrl
           className="bg-blue-500 text-white p-2"
         >
