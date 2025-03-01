@@ -23,7 +23,7 @@ const JobSchema = new Schema<IJob>({
   salary: { type: String, required: true },
   jobType: { type: String, required: true },
   postedBy: { type: Schema.Types.ObjectId, ref: "User" },
-  // createdAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now },
 });
 
 export default mongoose.models.Job || mongoose.model<IJob>("Job", JobSchema);
