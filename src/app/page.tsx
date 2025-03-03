@@ -1,13 +1,11 @@
-import JobList from "@/components/Jobs/JobList";
-import JobForm from "@/components/Jobs/JobsForm";
+import HomePage from "@/components/home/Home"; 
+
+
 
 export default function Home() {
   return (
-    <div>
-      <main className="p-6">
-        <JobForm />
-        <JobList />
-      </main>
-    </div>
+    <main className="p-6">
+      <HomePage />
+    </main>
   );
 }
