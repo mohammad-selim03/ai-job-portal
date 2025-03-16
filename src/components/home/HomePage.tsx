@@ -1,10 +1,15 @@
 import React from "react";
 import Banner from "./Banner";
+import Container from "../dynamics/Container";
+import Connect from "./Connect";
 
 const HomePage = () => {
   return (
     <div>
-      <Banner />
+      <Container>
+        <Banner />
+      </Container>
+      <Connect />
     </div>
   );
 };

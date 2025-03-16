@@ -10,9 +10,11 @@ export default {
   ],
   theme: {
     extend: {
-      Comfort: ["Comfortaa", "serif"],    
+      Comfort: ["Comfortaa", "serif"],
       colors: {
-        bacprimary001: "#AA60C8",
+        primary001: "#a855f7",
+        secondary001: "#4d42da",
+        primaryText: "#798090",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
