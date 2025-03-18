@@ -1,4 +1,4 @@
-import { SelectDemo } from "../dynamics/SelectDemo";
+import { SelectDemo } from "../../dynamics/SelectDemo";
 import JobsCategories from "./JobsCategories";
 
 const JobsSearch = () => {
@@ -9,7 +9,7 @@ const JobsSearch = () => {
       </h3>
       <div className="mt-5">
         <h1 className="text-[64px] font-medium text-center">
-          Just one click far to your{" "}
+          Just one click far to your{" "} <br />
           <span className="text-primary001">dream jobs</span>
         </h1>
         <div className="py-10 relative w-full">
@@ -28,7 +28,7 @@ const JobsSearch = () => {
         <div className="py5">
           <p className="text-2xl font-medium text-primary001 text-center">
             {" "}
-            Upload your resume - let's reqruiters find you.
+            Upload your resume - let&apos;s reqruiters find you.
           </p>
         </div>
         <div className="flex items-center justify-center">
